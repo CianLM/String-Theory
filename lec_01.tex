@@ -1,0 +1,81 @@
+\lecture{1}{23/01/2025}{Introduction}
+% GSW Vol I
+% Polchinski Vol I
+% Tong
+
+\subsection{Motivation}
+
+String theory is a candidate theory of quantum gravity. Before we discuss string theory itself, it is worthwhile to discuss gravity, namely classical gravity. One has that the Einstein equations,
+\begin{align}
+    R_{\mu \nu} - \frac{1}{2} R g_{\mu \nu} = 8 \pi G_{N} T_{\mu \nu}
+,\end{align}
+which are the equations of motion for the action
+\begin{align}
+    S = S_{\text{E.H.}} + S_\text{matter}
+,\end{align}
+where
+\begin{align}
+    S_{EH} = \frac{1}{16 \pi G_{N}} \int_{\mathcal{M}} \dd{^{4} x} \sqrt{-g}  R
+,\end{align}
+where $g = \det g$. One can think of this as a field theory where the dynamical field is the metric, $g_{\mu \nu}$. One has stress energy tensor
+\begin{align}
+    T_{\mu \nu} = -\frac{2}{\sqrt{-g} } \fdv{S_\text{matter}}{g^{\mu \nu}}
+.\end{align}
+
+When one translates to the quantum theory, the quantum fields and thus the stress energy tensor will too, $T_{\mu \nu} \to \hat{T}_{\mu \nu}$. It is difficult to imagine that the Einstein Hilbert action, and thus the left hand side of Einstein's equations are not quantum as well.
+
+$G_N$ appears as a coupling constant, and is a dimensional one with $\left[ G_N \right] = M^{-1} L^3 T^{-2}$. Then one can convert it to a mass scale (\textit{planck}) in natural units with
+\begin{align}
+    8 \pi G_N = \frac{\hbar c}{M^2_{\text{pl}}}
+.\end{align}
+
+Expanding around the ``vacuum'' of flat Minkowski space, then,
+\begin{align}
+    g_{\mu \nu} = \eta_{\mu \nu} + \frac{h_{\mu \nu}}{M_\text{pl}}
+.\end{align}
+
+Then the action becomes
+\begin{align}
+    S_{\text{EH}} = \int_{\mathcal{M}} \dd{^{4}x} \mathcal{L}_{\text{EH}}
+,\end{align}
+where
+\begin{align}
+    \mathcal{L}_{\text{EH}} = \mathcal{L}_0 + \mathcal{L}_\text{int}
+,\end{align}
+where
+\begin{align}
+    \mathcal{L}_0 = -\frac{1}{4} \partial_\mu \tensor{h}{^{\rho}_{\rho}} \partial^{\mu} \tensor{h}{^{\sigma}_{\sigma}} + \frac{1}{2} \partial_\mu h^{\rho \sigma} \partial^{\mu} h_{\rho \sigma}
+,\end{align}
+which is the Lagrangian of a free massless spin 2 particle, one can call the \textit{graviton}. We then have interaction Lagrangian
+\begin{align}
+    \mathcal{L}_\text{int} \sim  \frac{1}{M_\text{pl}} h \left( \partial h \right)^2 + \frac{1}{M_\text{pl}^2} h^2 \left( \partial h \right)^2
+.\end{align}
+
+However these interactions are irrelevant and thus lead to UV divergences at $\geq 2$ loops. This is a non-renormalizable theory. The effective theory then goes $g_\text{eff} \sim  \frac{E}{M_\text{pl}}$ becomes strong at $E \sim  M_\text{pl}$. This is $M_\text{pl} \sim  10^{18}$ GeV which is so far above anything accessible to colliders today, string theory is often consider too academic a pursuit for those bound by phenomenological interests.
+
+We need a UV completion of $S_\text{EH}$ which will consist of 
+\begin{itemize}
+    \item a consistent quantum theory, namely, unitary, Lorentz invariant, UV finite (or renormalizable)
+    \item a theory that reduces to GR at low energy $E \ll M_\text{pl}$ such that
+        \begin{align}
+            S_\text{eff} \sim  S_\text{EH} + \cdots
+        .\end{align}
+\end{itemize}
+
+\textbf{There is no other theory that does both}. String theory is the unique candidate.
+
+\subsection{String Theory}
+
+A QFT is a theory of interacting relativistic  particles. This necessarily involves unitarity, Lorentz invariance and locality. There are very few possibilities but still an infinite countable list.
+
+String theory considers replacing point particles with strings. These can be closed or open one dimensional objects at fixed time.
+%
+Propagating in time these generate two dimensional surfaces called \textit{worldsheets}.
+
+It is remarkable that this is unique and there are no free parameters. It is UV finite and closed strings give rise to gravitons and open strings to gauge fields and fermions. It also reduces to GR with matter at low energy.
+
+It is not without baggage. It requires supersymmetry and extra dimensions to be well defined. For bosons this is $D = 26$ and for fermions $D = 10$.
+
+While we have a unique theory, there are many ground states (like the Higgs boson) which make phenomenological predictions hard.
+
+

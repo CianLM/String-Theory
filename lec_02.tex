@@ -1,0 +1,174 @@
+\lecture{2}{25/01/2025}{Classical and Quantum String}
+
+Work in $\R^{1, D - 1}$ with metric
+\begin{align}
+    \eta_{\mu \nu} = \text{diag}\left( -1,+1,\cdots,+1 \right) 
+,\end{align}
+with line element
+\begin{align}
+    \dd{s}^2 = \eta_{\mu \nu} \dd{x}^{\mu} \dd{x}^{\nu}
+.\end{align}
+
+For timelike $\dd{x}^{\mu}$, $\dd{s}^2 < 0$.
+
+We define a $D$-vector as $X^{\mu}$ with $\mu \in \{0,1,\cdots, D -1\} $ and an inner product
+\begin{align}
+    X \cdot Y = X_\mu Y^{\mu} = \eta_{\mu \nu} X^{\mu} Y^{\nu}
+.\end{align}
+
+Sometimes we also think about a curved metric $G_{\mu \nu}\left( x \right) $.
+
+\subsection{Relativistic point particle}
+
+As a warm up, we will study a relativistic point particle of rest mass $m$ moving in $\R^{1, D-1}$.
+
+One should think of a worldline $X$ as a map from a parameter $W \to \R^{1, D - 1}$ that takes
+\begin{align}
+    \tau \mapsto X^{\mu}\left( \tau \right)
+,\end{align}
+where $\tau$ is called the proper time.
+
+The natural choice of an action is one proportional to the proper time and thus the length of the worldline. Namely, one takes
+\begin{align}
+    S = \mathcal{N} \int_{W} \sqrt{-\dd{s}^2}  = \mathcal{N} \int_W \dd{\tau} \sqrt{-\eta_{\mu \nu} \dv{X^{\mu}}{\tau} \dv{X^{\nu}}{\tau}} 
+.\end{align}
+
+\begin{exercise}
+    Fix $\mathcal{N}$ such that for $X^{\mu}\left( \tau \right) = \left( t \left( \tau \right) , \vec{x}\left( \tau \right)  \right) $, the three velocity $\vec{v} = \dv{\vec{x}}{\tau}$, $v = \left| \vec{v} \right| $, and 
+    \begin{align}
+        \dv{t}{\tau} = \gamma \left( v \right) = \frac{1}{\sqrt{1 - v^2} }
+    ,\end{align}
+    one can set
+    \begin{align}
+        S = \int_W \dd{t} L \left( t \right) 
+    ,\end{align}
+    with
+    \begin{align}
+        L = \mathcal{N} \left( \dv{t}{\tau} \right)^{-1} \sqrt{\left( \dv{t}{\tau} \right)^2 - \left( \dv{\vec{x}}{\tau} \right)^2 } = \mathcal{N} \sqrt{1 - v^2} 
+    .\end{align}
+\end{exercise}
+
+This Lagrangian has conjugate momenta
+\begin{align}
+    \vec{p} = \pdv{L}{\vec{v}} = -\frac{\mathcal{N}\vec{v}}{\sqrt{1 - v^2} } = m \gamma \left( v \right) \vec{v}
+,\end{align}
+where we have identified $\mathcal{N} = -m$.
+
+By Legendre transform, we find a Hamiltonian
+\begin{align}
+    E = H = \vec{p} \cdot \vec{v} - L = m v^2 \gamma \left( v \right) + m \gamma^{-1} \left( v \right) = m \gamma \left( v \right) 
+,\end{align}
+which is the correct relativistic energy of a point particle.
+
+Therefore for a point particle, we can formally state the action
+\begin{align}
+    S = -m \int_W \dd{\tau} = \sqrt{-\eta_{\mu \nu} \dv{X^{\mu}}{\tau} \dv{X^{\nu}}{\tau}}  
+.\end{align}
+
+The form of this action makes the symmetries of it manifest (clear and explicit).
+Namely, one can see
+\begin{itemize}
+    \item Poincare invariance, such that $X^{\mu} \to X'^{\mu} = \tensor{\Lambda}{^{\mu}_\nu} X^{\nu} + C^{\mu}$, where the Lorentz transformation is defined by
+        \begin{align}
+            \tensor{\Lambda}{^{\mu}_\rho} \eta^{\rho \sigma} \tensor{\Lambda}{^{\nu}_\sigma} = \eta^{\mu \nu}
+        .\end{align}
+    \item reparametrization invariance $\tau \to \widetilde{\tau}\left( \tau \right) $ given that $\dv{\widetilde{\tau}}{\tau} > 0$ as
+        \begin{align}
+            \dv{X^{\mu}}{\tau} \to \dv{X^{\mu}}{\widetilde{\tau}} = \dv{X^{\mu}}{\tau} \dv{\tau}{\widetilde{\tau}}
+        ,\end{align}
+        and as the measure transforms as $\dd{\tau} = \dv{\widetilde{\tau}}{\tau} \dd{\widetilde{\tau}}$, one has
+        \begin{align}
+            S = -m \int_W \dd{\widetilde{\tau}} \sqrt{-\eta_{\mu \nu} \dv{X^{\mu}}{\widetilde{\tau}} \dv{X^{\nu}}{\widetilde{\tau}}} 
+        .\end{align}
+        This redundancy can be thought of as a gauge symmetry. If one gauge fixes $\widetilde{\tau} = t$, then we recover the previous action
+        \begin{align}
+            S = -m \int \dd{t} \sqrt{1 - v^2} 
+        ,\end{align}
+        however this form does not make the symmetries manifest, including the gauge one which is explicitly broken. 
+\end{itemize}
+
+\subsection{Relativistic String}
+
+Consider an open string and a closed string, with \textit{worldsheets} that look like the plane and a cylinder.
+
+% fig
+
+These worldsheets $\Sigma$ in $\R^{1,D-1}$ are the analogue of the world line for a 1D point particle.
+
+We introduce worldsheet coordinates $\sigma^{\alpha} = \left( \tau , \sigma \right)$ with $\alpha = 0,1$. 
+
+The spatial coordinate $\sigma$ satisfies
+\begin{itemize}
+    \item $\sigma \in \left[ 0,\pi \right] $ for the open string,
+    \item $\sigma \sim  \sigma + 2\pi$, for the closed string.
+\end{itemize}
+
+We need to describe how this worldsheet is embedded in spacetime. This is the \textit{string configuration} and is a map
+\begin{align}
+    X : \Sigma \to \R^{1, D - 1} \nonumber \\
+    \left( \tau , \sigma \right) \mapsto X^{\mu}\left( \sigma, \tau \right) 
+\end{align}
+
+\begin{definition}
+    The \textbf{pullback} of the Minkowski metric $\eta_{\mu \nu}$ to $\Sigma$ is given by
+\begin{align}
+    \gamma_{\alpha \beta} = \eta_{\mu \nu} \dv{X^{\mu}}{\sigma^{\alpha}} \dv{X^{\nu}}{\sigma^{\beta}}
+.\end{align}
+\end{definition}
+
+This coincides with the induced metric on an embedded surface. 
+
+One can write it more explicitly with $\dv{X^{\mu}}{\sigma^{0}} = \dv{X^{\mu}}{\tau} = \dot{X}^{\mu}$ and $\dv{X^{\mu}}{\sigma^{1}} = \dv{X^{\mu}}{\sigma} = X'^{\mu}$ giving us
+\begin{align}
+    \gamma_{\alpha \beta} = \mqty( \dot{X}^2 & \dot{X} \cdot X'\\ \dot{X}\cdot X' &  X'^2 )
+.\end{align}
+
+One can then define
+\begin{align}
+    S_\text{Nambu-Goto} = -T \int_{\Sigma} \dd{^2 \sigma} \sqrt{-\det \gamma} = -T \int_\Sigma \dd{^2\sigma} \sqrt{ \left( \dot{X} \cdot X' \right)^2 - \dot{X}^2 \dot{X'}^2} 
+,\end{align}
+which describes the natural notion of area on the string worldsheet, the extension of the notion of length of a worldline.
+
+$T$ has dimensions of $M^2$ and is the \emph{tension} of the string as we will see.
+
+\subsection{Polyakov Action}
+
+We introduce a dynamical metric $g_{\alpha \beta}\left( \sigma, \tau \right) $ on $\Sigma$ with determinant $g = \det g$ and signature $\left( -1,+1\right) $. Then we see
+\begin{align}
+    S_{\text{Polyakov}} = -\frac{T}{2} \int \dd{^2\sigma} \sqrt{-g} \left( g^{\alpha \beta} \eta_{\mu \nu}\partial_\alpha X^{\mu} \partial_\beta X^{\nu} \right)   = -\frac{T}{2} \int \dd{^2\sigma} \sqrt{-g} \left( g^{\alpha \beta} \left( \partial_\alpha X \right) \cdot  \left(  \partial_\beta X \right)  \right)
+,\end{align}
+where one can also write
+\begin{align}
+    g^{\alpha \beta} \gamma_{\alpha \beta} = g^{\alpha \beta} \eta_{\mu \nu}  \pdv{X^{\mu}}{\sigma^{\alpha}} \pdv{X^{\nu}}{\sigma^{\beta}}
+.\end{align}
+
+\begin{note}
+    The worldsheet is instrumental here. We are thinking of $X$ as a map from the worldsheet to spacetime
+    \begin{align}
+        X : \Sigma \to \R^{1, D - 1}
+    .\end{align}
+
+    However one can think of the field theory itself as living on the worldsheet of the string. The worldsheet is then a 2D spacetime and the spacetime is a \textit{field space} or a \textit{target space}. Namely, one thinks of the spacetime coordinates as scalar fields on $\Sigma$ and the string actions as defining 2D field theories.
+
+    The Polyakov action then, is a number of 2D scalar fields coupled to 2D gravity on $\Sigma$.
+\end{note}
+
+We then consider the equation of motion of the 2D metric $g_{\alpha \beta}$ which is
+\begin{align}
+    \fdv{S_\text{Polyakov}}{g_{\alpha \beta}} = 0
+.\end{align}
+
+Equivalently, as the energy momentum tensor of the field theory is given by
+\begin{align}
+    \mathcal{T}^{\alpha \beta} = \frac{2}{\sqrt{-g} } \fdv{S_\text{Polyakov}}{g_{\alpha \beta}} = 0
+,\end{align}
+notice that one can integrate out $g_{\alpha \beta}$ and recover the Nambu-Goto action
+
+
+
+
+
+
+
+
+
