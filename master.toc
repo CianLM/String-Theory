@@ -1,7 +1,10 @@
 \contentsline {section}{\numberline {1}Lecture: Introduction}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}String Theory}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}String Theory}{3}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Lecture: Classical and Quantum String}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Relativistic point particle}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Relativistic String}{5}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Polyakov Action}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Lecture }{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Symmetries of the Polyakov action}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Gauge fixing}{9}{subsection.3.2}%

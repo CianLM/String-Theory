@@ -1,0 +1,182 @@
+\lecture{3}{28/01/2025}{}
+
+Recall that the two actions
+\begin{align}
+    S_\text{NG} = -T \int_\Sigma \dd{^2\sigma} \sqrt{-\det \gamma}  &&   S_P = -\frac{T}{2} \int_\Sigma \dd{^2\sigma} \sqrt{-g}  g^{\alpha \beta} \gamma_{\alpha \beta}
+,\end{align}
+for
+\begin{align}
+    \gamma_{\alpha \beta} =  \eta_{\mu \nu} \pdv{X^{\mu}}{\sigma^{\alpha}} \pdv{X^{\nu}}{\sigma^{\beta}}
+.\end{align}
+both describe a string on a worldsheet. The Nambu-Goto action is the area of the embedded worldsheet of the string in $D$ dimensional spacetime. The Polyakov action defines a 2D scalar field theory coupled to 2D gravity. These two actions are dynamically equivalent. It remains to shown this.
+
+Consider the variation of the Polyakov action,
+\begin{align}\label{eq:poly_var}
+    \delta S_\text{P} = -\frac{T}{2} \int \dd{^2 \sigma} \delta \left( \sqrt{-g} g^{\alpha \beta} \gamma_{\alpha \beta} \right)
+,\end{align}
+where we see that
+\begin{align}
+    \delta \left( \sqrt{-g} g^{\alpha \beta} \gamma_{\alpha \beta} \right) = \sqrt{-g}  \left( \delta g^{\alpha \beta} \gamma_{\alpha \beta} + \frac{\delta g}{2 g} g^{\alpha \beta} \gamma_{\alpha \beta} \right) 
+.\end{align}
+We need to be able to compute this variation.
+
+\begin{lemma}
+    For symmetric matrix $A_{\alpha \beta} \to A_{\alpha \beta} + \left( \delta A \right)_{\alpha \beta} $,
+    \begin{align}
+        \delta \left( \det A \right) = \det A  A^{\alpha \beta} \delta A_{\alpha \beta}
+    .\end{align}
+\end{lemma}
+\begin{proof}
+    \begin{align}
+        \delta \left( \det A \right) &= \delta \left( \exp \left( \log \left( \det A \right)  \right)  \right) \\
+        &= \delta \left( \exp \left( \Tr \left( \log A \right)  \right)  \right)  \\
+        &= \delta \left( \Tr \left( \log A \right)  \right) \det A  \\
+        &= \Tr \left( A^{-1} \cdot \delta A \right)  \det A
+    .\end{align}
+\end{proof}
+
+Therefore $\delta g = \delta \left( \det g \right) = g g^{\alpha \beta} \delta g_{\alpha \beta} = -g g_{\alpha \beta} \delta g^{\alpha \beta}$. 
+
+Thus, the variation of the Polyakov action becomes
+\begin{align}
+    \delta S_\text{P} = \left( \gamma_{\alpha \beta} - \frac{1}{2} g_{\alpha \beta} \left( g^{\rho \sigma} \gamma_{\rho \sigma} \right)  \right) \delta g^{\alpha \beta} = 0
+,\end{align}
+which implies we have equation of motion $T^{\alpha \beta} = 0$ for $g_{\alpha \beta}$ equivalently written as
+\begin{align}
+    \gamma_{\alpha \beta} = \frac{1}{2} g_{\alpha \beta} \left( g^{\rho \sigma} \gamma_{\rho \sigma} \right) 
+.\end{align}
+
+It suffices to take the determinant of this expression, giving
+\begin{align}
+    \det \gamma = \frac{1}{4} g \left( g^{\rho \sigma} \gamma_{\rho \sigma} \right)^2
+,\end{align}
+which implies
+\begin{align}
+    g = \frac{4 \det \gamma}{\left( g^{\rho \sigma} \gamma_{\rho \sigma} \right)^2}
+.\end{align}
+
+Substituting this into the Polyakov action, we see
+\begin{align}
+    S_\text{P} = -\frac{T}{2} \int_{\Sigma} \dd{^2\sigma} \frac{2 \sqrt{-\det \gamma} }{\left( g^{\rho \sigma} \gamma_{\rho \sigma} \right) } \left( g^{\alpha \beta} \gamma_{\alpha \beta} \right) = S_\text{NG}
+,\end{align}
+as desired. Namely, integrating out the metric recovers the Nambu-Goto action. Therefore they are classically equivalent descriptions of a string.
+
+Recall that we are thinking of the Polyakov action as a two dimensional field theory defined on the string worldsheet,
+\begin{align}
+    S_\text{P} = -\frac{T}{2} \int_\Sigma \dd{^2 \sigma} \sqrt{-g}  g^{\alpha \beta} \eta_{\mu \nu} \pdv{X^{\mu}}{\sigma^{\alpha}} \pdv{X^{\nu}}{\sigma^{\beta}}
+.\end{align}
+
+We are thinking of this theory as a number of scalar fields $X^{\mu}$ coupled to a curved background metric $g_{\alpha \beta}$ on the world sheet. Equivalently phrased, this is scalars coupled to 2D gravity.
+
+Gravity has a large symmetry group, namely the group of diffeomorphisms of the manifold. In 4D, this is not enough to remove all degrees of freedom and one is left with the propagating components of the graviton. 
+
+In two dimensions, the symmetries of 2D GR is sufficient to render gravity to be purely gauge. There are no transverse directions for the graviton to be polarised in.
+
+One may also naively want to add the Einstein Hilbert term to this action,
+\begin{align}
+    S_\text{EH} = \frac{1}{2\pi} \int \dd{^2\sigma} \sqrt{-g}  R \left[ g \right] 
+,\end{align}
+however in 2D, this is a total derivative term which only contributes on the boundary and thus does not contribute. This is a manifestation that there are no dynamical degrees of freedom in 2D gravity.
+
+\subsection{Symmetries of the Polyakov action}
+The Polyakov action has a number of symmetries.
+
+\begin{itemize}
+    \item The Polyakov action is invariant under the Poincare group with
+    \begin{align}
+        X^{\mu} \to \widetilde{X}^{\mu} = \tensor{\Lambda}{^{\mu}_\nu} X^{\nu} + C^{\mu}
+    ,\end{align}
+    where $\tensor{\Lambda}{^{\mu}_\nu}$ is a Lorentz transformation and $C^{\mu} \in \R^{4}$ is a translation.
+    
+    This is a global symmetry so one can compete Noether currents and conserved charges.
+    \begin{proof}[ (Ex 1.3)]
+        
+    \end{proof}
+    \item It is also invariant under reparametrization
+        \begin{align}
+            \sigma^{\alpha} \to \widetilde{\sigma}^{\alpha}\left( \sigma, \tau \right) 
+        .\end{align}
+        These are 2D diffeomorphisms on the worldsheet.
+        This is a gauge symmetry (redundancy in our description) and we know from GR that our metric tensor transforms as
+        \begin{align}
+            g_{\alpha \beta} \left( \sigma ,\tau \right) &\to \widetilde{g}_{\alpha \beta}\left( \widetilde{\sigma},\widetilde{\tau} \right) \\
+            &= \pdv{\sigma^{\delta}}{\widetilde{\sigma}^{\alpha}} \pdv{\sigma^{\gamma}}{\widetilde{\sigma}^{\beta}} g_{\delta \gamma}\left( \sigma, \tau \right) 
+        ,\end{align}
+        and as $X^{\mu}$ is a scalar field on the worldsheet, 
+        \begin{align}
+            X^{\mu}\left( \sigma, \tau \right) \to \widetilde{X}^{\mu}\left( \widetilde{\sigma}, \widetilde{\tau} \right) = X^{\mu}\left( \sigma,\tau \right) 
+        .\end{align}
+
+        Under infinitesimal transformation $\sigma^{\alpha} \to \widetilde{\sigma}^{\alpha} = \sigma^{\alpha} - \xi^{\alpha}$, one sees
+        \begin{align}
+            \delta g_{\alpha \beta} = \nabla_\alpha \xi_\beta + \nabla_\beta \xi_\alpha && \delta X^{\mu}  = \xi^{\alpha} \partial_\alpha X^{\mu}
+        ,\end{align}
+        where $\nabla$ is a (torsion-free) worldsheet covariant derivative
+        \begin{align}
+            \nabla_\alpha \xi_\beta = \partial_\alpha \xi_\beta + \tensor{\Gamma}{_{\alpha}^{\sigma}_{\beta}} \xi_\sigma
+        ,\end{align}
+    where $\tensor{\Gamma}{_\alpha^{\sigma}_{\beta}}$ is the Christoffel symbol for $g_{\alpha \beta}$.
+    \item The Polyakov action almost uniquely has another symmetry called \emph{Weyl symmetry} such that
+        \begin{align}
+            g_{\alpha \beta} \to \widetilde{g}_{\alpha \beta} = \Omega^2 \left( \sigma, \tau \right) g_{\alpha \beta}
+        ,\end{align}
+        where $X^{\mu} \to \widetilde{X}^{\mu} = X^{\mu}$. We treat this as a gauge symmetry.
+        \begin{proof}
+            
+        \end{proof}
+\end{itemize}
+
+\begin{note}
+    See Sheet 1 for a Polyakov-type action for point particle.
+\end{note}
+
+One can generalize the notion of strings to higher dimensional surfaces called \emph{$p$-branes}. However the Polyakov action does not have Weyl symmetry in any other case but for strings ($p = 1$). This makes string theory much more tenable and branes very very hard.
+
+\subsection{Gauge fixing}
+
+As 2D gravity is (locally) \emph{pure gauge}, and $g_{\alpha \beta} = g_{\beta \alpha}$ has 3 independent components, one can fix the 3 independent components using diffeomorphisms (providing 2 d.o.f.) and Weyl symmetry (providing 1 d.o.f.).
+
+Namely, diffeomorphisms allow us to put a generic metric into the form
+\begin{align}
+    g_{\alpha \beta} \to e^{2 \Phi} \eta_{\alpha \beta}
+,\end{align}
+from which a Weyl rescaling allows us to set
+\begin{align}
+    g_{\alpha \beta} \to \eta_{\alpha \beta} = \text{diag}\left( -1,+1 \right) 
+,\end{align}
+generically. This is called \emph{conformal gauge}. 
+
+The Polyakov action then becomes
+\begin{align}
+    S_\text{conformal} = -\frac{T}{2} \int_{\Sigma} \dd{^2\sigma} \sqrt{-g}  \eta^{\alpha \beta} \left( \partial_\alpha X \right)  \cdot \left( \partial_\beta X \right) 
+,\end{align}
+where we have abbreviated $a\cdot b = \eta_{\mu \nu} a^{\mu} b^{\nu}$.
+
+This is a renormalizable 2D field theory. Even if we make the target spacetime curved $\eta_{\mu \nu} \to G_{\mu \nu} \left( X \right) $,
+\begin{align}
+    S_\text{NLSM} = -\frac{T}{2} \int_{\Sigma} \dd{^2\sigma} \eta^{\alpha \beta} G_{\mu \nu} \left( X \right) \partial_\alpha X^{\mu} \partial_\beta X^{\nu}
+,\end{align}
+is a 2D \emph{nonlinear sigma model}. It is on a generic curved manifold and is a renormalizable field theory. In higher spacetime dimensions this is not the case. Therefore strings are very unique in this sense when compared to higher dimensional branes.
+
+However, we still need to impose the equation of motion for $g_{\alpha \beta}$ even though we have fixed it through symmetry. Recall that its equation of motion comes from
+\begin{align}
+    \mathcal{T}_{\alpha \beta} = -\frac{2}{T} \frac{1}{\sqrt{-g}}  \fdv{S_\text{P}}{g^{\alpha \beta}} = 0
+.\end{align}
+
+With this normalization, the stress energy tensor (with $g_{\alpha \beta} = \eta_{\alpha \beta}$) is of the form
+\begin{align}
+    T_{\alpha \beta} = \partial_\alpha X \cdot \partial_\beta X - \frac{1}{2} \eta_{\alpha \beta} \left( \eta^{\rho \sigma} \partial_\rho X \cdot \partial_\sigma X \right) 
+.\end{align}
+
+\begin{proof}
+    Taking the variation of the Polyakov action from \cref{eq:poly_var} and setting $g_{\alpha \beta} = \eta_{\alpha \beta}$, we see that
+\end{proof}
+
+Therefore imposing this equation of motion for $g_{\alpha \beta}$ in the form $\mathcal{T}_{\alpha \beta} = 0$ becomes component wise
+\begin{align}
+    T_{10} = \dot{X} \cdot X' = 0, && T_{00} = T_{11} = \frac{1}{2} \left( \dot{X}^2 + X'^2 \right) 
+.\end{align}
+
+These are the \emph{Virasoro constraints} that must be imposed when we are looking at the Polyakov action in conformal gauge.
+
+
