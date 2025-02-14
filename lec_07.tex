@@ -1,0 +1,124 @@
+\lecture{7}{08/02/2025}{Normal Ordering Constraints}
+
+Recall that we made the light-cone gauge choice $X^{+}\left( \sigma, \tau \right) = x^{+} + \alpha' p^{+} \tau$ which explicitly breaks Lorentz invariance. This does not mean we are breaking the gauge invariance of the theory, as we expect observables to be gauge invariant quantities (i.e. independent of our gauge choice). When we choose a non-Lorentz invariant gauge, we are breaking it by making a specific choice with the knowledge that if we perform a Lorentz transformation we can get to any other frame. This is the sense in which one means we have lost \emph{manifest} Lorentz invariance.
+
+If we quantize correctly, all gauge invariant quantities should also be Lorentz covariant.
+
+Recall that solving the constraint for $X^{-}$ gives the mass shell constraint
+\begin{align}
+    M^2 = 2p^{+} p^{-} - \left| \vec{p}_T \right|^2 = \frac{4}{\alpha'} \sum_{n>0}^{} \vec{\alpha}_{-n} \cdot \vec{\alpha}_n = \frac{4}{\alpha'} \sum_{n > 0}^{} \vec{\widetilde{\alpha}}_{-n} \cdot \vec{\widetilde{\alpha}}_{n}
+.\end{align}
+
+\subsection{Light cone quantization}
+
+Our mass shell condition can be regarded as eliminating $p^{-}$ with
+\begin{align}
+    p^{-} = \frac{\left| \vec{p}_T \right|^2 + M^2}{2p^{+}}
+.\end{align}
+
+We think of $p^{-}$ as an \emph{energy}. This is conjugate to $x^{+}$ we think of as a \emph{time}. The remaining degrees of freedom are $x^{-}, p^{+}, \vec{x}_T, \vec{p}_T$ and $\alpha^{i}_n = \left( \alpha^{i}_{-n} \right)^{*}$.
+
+As we have $\left[ \hat{x}^{i}, \hat{p}^{j} \right] = i \delta^{ij}$ and $\left[ \hat{\alpha}_n^{i}, \hat{\alpha}_m^{i} \right] = \left[ \hat{\widetilde{\alpha}}_n^{i}, \hat{\widetilde{\alpha}}_m^{i} \right] = n \delta^{ij}\delta_{n + m,0} $, the remaining physical degrees of freedom have commutators
+\begin{align}
+    \left[ \hat{x}^{-}, \hat{p}^{+} \right] = - i && 
+.\end{align}
+
+% See Brink and Henneaux 'Principles of String Theory' p 136 for how the constraints modify these commutators.
+
+We define the string ground state $\ket{0; p}$ such that it is an eigenstate $\hat{p}^{\mu}\ket{0,p} = p^{\mu} \ket{0, p}$ and that $\hat{\alpha}^{i}_n \ket{0, p} = \hat{\widetilde{\alpha}}^{i}_n \ket{0,p} = 0$ for $n \geq 1$. As before we have the natural spectrum of creation operators
+\begin{align}
+    \prod_{\alpha=1}^{^{i}} \left( \hat{\alpha}^{i_{\alpha}}_{-n_{\alpha}} \right)^{m_\alpha} \ket{0, p}   
+.\end{align}
+
+The mass shell condition is subject to ordering ambiguity. Namely, in transferring from the classical to the quantum theory, we normal order and pick up a constant such that
+\begin{align}
+    \sum_{n > 0}^{} \vec{\alpha}_n \cdot \vec{\alpha}_n \to \sum_{n > 0}^{} \hat{\vec{\alpha}}_{-n} \hat{\vec{\alpha}}_{n} - a
+,\end{align}
+where $a$ is a normal ordering constant. We then see
+\begin{align}
+    M^2 = \frac{4}{\alpha'} \left( N - a \right) = \frac{4}{\alpha'} \left( \widetilde{N} - a \right) 
+,\end{align}
+where $N$ is the \emph{level} given by
+\begin{align}
+    \sum_{i=1}^{D-2}  \sum_{n > 0}^{}  \hat{\alpha}_{-n}^{i} \hat{\alpha}^{i}_n
+,\end{align}
+and
+\begin{align}
+    \widetilde{N} = \sum_{i=1}^{D-2} \sum_{n > 0}^{} \hat{\widetilde{\alpha}}_{-n}^{i} \hat{\widetilde{\alpha}}^{i}_n
+.\end{align}
+
+Then we define 
+\begin{align}
+    \hat{a}^{i}_n = \frac{\hat{\alpha}^{i}_n}{\sqrt{n} } && \left( \hat{a}^{i}_n \right)^{\dag}  = \frac{\hat{\alpha}^{i}_{-n}}{\sqrt{n} }
+,\end{align}
+which imply
+\begin{align}
+    N = \sum_{i=1}^{^{D-2}}  \sum_{n > 0}^{} n \left( \hat{a}^{i}_n \right)^{\dag} \hat{a}^{i}_n 
+,\end{align}
+is the number operator and $a/a^{\dag}$ are creation an annihilation operators of the standard harmonic oscillator. We define an occupation number for eigenstate $\ket{\psi}$, $\left( \hat{a}^{i}_n \right)^{\dag} \hat{a}^{i}_n \ket{\psi} = \mathcal{N}^{i}_n \ket{\psi}$, and identically $\widetilde{\mathcal{N}}^{i}_n \in \N$, then the mass shell constraint becomes
+\begin{align}
+    M^2 = \frac{4}{\alpha'} \left( \sum_{i=1}^{D-2}  \sum_{n > 0}^{} n \mathcal{N}^{i}_N - a \right) = \frac{4}{\alpha'} \left( \sum_{i=1}^{D-2}  \sum_{n > 0}^{} n \widetilde{\mathcal{N}}^{i}_N - a \right)
+.\end{align}
+
+For an open string, we have a single tower of oscillators as the left and right movers are tied together as they can bounce off the free string endpoint. We then have
+\begin{align}
+    M^2 = \frac{1}{\alpha'} \left( \sum_{i=1}^{D-2}  \sum_{n>0}^{} n \mathcal{N}_n - a \right) 
+.\end{align}
+
+This has an identical ground state $\ket{0,p}$.
+
+We now tabulate the mass spectrum
+
+\begin{table}[h]
+    \centering
+    \caption{}
+    \label{tab:r}
+    \begin{tabular}{c|cc}
+    $\ket{\psi}$ & $M^2 \alpha'$ &  Count \\
+    \midrule
+    $\ket{0, p}$ & $-a$ & 1 \\
+    $\hat{\alpha}_-1^{i} \ket{0, p}$ & $1 - a$ & $D - 2$ \\
+    $\hat{\alpha}_{-1}^{i} \hat{\alpha}^{j}_{-1} \ket{0, p}$ or $\hat{\alpha}_{-2}^{k} \ket{0,p}$ & $\frac{1}{2} \left( D - 2 \right) \left( D - 1 \right) + \left( D - 2 \right) $
+    \end{tabular}
+\end{table}
+
+\subsection{Lorentz invariance}
+
+For relativistic particles in $R^{1, D - 1}$, when we say a particle state in QM theory, we mean a unitary representation of the Poincare algebra. Namely, a Lorentz invariant state has the property that the Poincare symmetry acts unitarily on the Hilbert space of our theory. The particles are representations of that algebra.
+
+The Poincare group is the semi-direct product
+\begin{align}
+    P_D \cong SO \left( 1, D - 1 \right) \ltimes \R^{1, D - 1}
+.\end{align}
+
+The representations of this group are labeled by their Casimirs, one of which is the mass, $p_\mu p^{\mu} = - M^2$. 
+
+We proceed with the Wigner classification. For massive particles $M^2 > 0$, we can go to the rest frame in which $p^{\mu} = \left( M, \overbrace{0,\cdots,0}^{D-1} \right) $. We have then broken the Poincare invariance but have a subgroup of rotations amongst the $D - 1$ directions unbroken. Thus  such states should form an irreducible representation of $SO \left( D - 1 \right) $, called a \emph{little group}.
+
+If $M^2 = 0$, then there does not exist a rest frame. Rather, we can go to a special frame with $p^{\mu}= \left( p, p, \overbrace{0,\cdots,0}^{D-2} \right)$. Such states then form irreducible representations of $SO \left( D-2 \right) $. 
+
+Therefore a necessary but not sufficient condition for our theory to be Lorentz invariant is that all of the states we find here should be organizable into representations of $SO \left( D - 1 \right) $ if they are massive, and $SO \left( D - 2 \right) $ if they are massless.
+
+\subsection{Irreducible representations of $SO \left( r \right) $}
+
+\begin{itemize}
+    \item Recall that one can have a singlet (or scalar) $\phi$ that is invariant under $SO \left( r \right) $. This is a one dimensional representation.
+    \item One can have a vector $V_\alpha$ with $\alpha = 1,\cdots, r$ gives us a representation of dimension $r$.
+    \item One can have tensors of rank two where there are two possibilities that give rise to irreducible representations:
+        \begin{itemize}
+            \item For $A_{\alpha \beta} = - A_{\beta \alpha}$, one has dimension $\frac{1}{2} r \left(  r - 1 \right) $,
+            \item For symmetric traceless $S_{\alpha \beta} = S_{\beta \alpha}$ and $\tensor{S}{_\alpha^{\alpha}} = 0$ (as this is a scalar), one has dimension $\frac{1}{2} \left( r - 1 \right)  \left( r + 2 \right) $
+        \end{itemize}
+\end{itemize}
+
+We see that the first excited state $\hat{\alpha}^{i}_{-1}\ket{0,p}$ with $M^2 = \frac{1}{\alpha'} \left(  1- a \right) $, has $D - 2$ which form a vector representation of $SO \left( D - 2 \right) $. This is then consistent with Wigner's classification if the particle is massless. Thus we require $a = 1$.
+
+It remains to see the ramifications of this condition.
+
+
+
+
+
+
+
+

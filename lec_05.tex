@@ -1,0 +1,159 @@
+\lecture{5}{01/02/2025}{Beginning String Quantization}
+
+Recall that we introduced lightcone coordinates on the worldsheet $\Sigma$ to be
+\begin{align}
+    \sigma^{\pm} = \tau \pm \sigma
+,\end{align}
+which give derivatives
+\begin{align}
+    \partial_{\pm} = \pdv{\sigma^{\pm}} = \frac{1}{2} \left( \partial_\tau \pm \partial_\sigma \right) 
+.\end{align}
+
+The benefit of doing this is that the equation of motion in conformal gauge separates into left and right moving modes. This is a special feature of the massless wave equation in two dimensions.
+
+Namely, $\partial_\alpha \partial^{\alpha} X^{\mu} = 0$ becomes $\partial_+ \partial_- X^{\mu} = 0$ and 
+\begin{align}
+    X^{\mu}\left( \sigma, \tau \right)  = X_L^{\mu}\left( \sigma^{+} \right)  + X^{\mu}_R \left( \sigma^{-} \right) 
+.\end{align}
+
+One needs to solve this equation and consider its boundary conditions.
+
+For a closed string, one has $X^{\mu}\left( \sigma + 2\pi, \tau \right) = X^{\mu}\left( \sigma, \tau \right)$. We know how to solve a periodic function, and thus have a general solution
+\begin{align}
+    X^{\mu}_L \left( \sigma^{+} \right) = x^{\mu} + \frac{1}{2} \alpha' p^{\mu} \sigma^{+} + i\sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0}^{} \frac{1}{n} \alpha^{\mu}_n \exp \left( -i n \sigma^{+} \right) 
+,\end{align}
+where this is a constant term, linear term and $2\pi$ periodic functions. Note that the linear term is not periodic but only the sum of $X_L^{\mu} + X_R^{\mu}$ needs to be periodic, not them individually. Namely,
+\begin{align}
+    X_R^{\mu} \left( \sigma^{-} \right) = x^{\mu} + \frac{1}{2} \alpha' p^{\mu} \sigma^{-} + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0}^{} \frac{1}{n  }\widetilde{\alpha}_n^{\mu} \exp \left( -i n \sigma^{-} \right) 
+.\end{align}
+
+\begin{note}
+    $\alpha' = \frac{1}{2\pi T}$.
+\end{note}
+
+Further, reality of $X^{\mu}$ imposes that
+\begin{align}
+    \alpha_n^{\mu} = \left( \alpha^{\mu}_{-n} \right)^{*}, &&  \widetilde{\alpha}_n^{\mu} = \left( \widetilde{\alpha}^{\mu}_{-n} \right)^{*} 
+.\end{align}
+
+\begin{exercise}
+    Find the corresponding general solution for the open string with $\sigma \in [ 0,\pi ]$ with Neumann boundary conditions such that $\partial_\sigma X^{\mu} \bigg|_{\sigma = 0, \pi} = 0$.
+
+    As any function on $[0,\pi]$ can be extended to a periodic function on $[0,2\pi]$, the solution is near identical. The boundary condition is nontrivial to implement and ties together the left and right handed oscillators giving $\alpha^{\mu}_n = \widetilde{\alpha}_n^{\mu}$.
+\end{exercise}
+
+$x^{\mu}$ is naturally thought of as the center of the string. $p^{\mu}$ describes the motion of the string through spacetime. It can be identified with the spacetime momentum of the string.
+
+\subsection{Virasoro constraints}
+
+Recall it remains to impose the Virasoro constraints. In the original form, they are expressible as $\dot{X} \cdot X' = 0$ and $\frac{1}{2} \left( \dot{X}^2 + X'^2 \right) = 0$. As $T_{\alpha \beta} = 0$, in lightcone coordinates, one has that the constraints take the form
+\begin{align}
+    T_{+ +} = \partial_+ X \cdot \partial_+ X = 0 && T_{+-} = 0 && T_{- -} = \partial_- X \cdot \partial_- X = 0
+.\end{align}
+
+These pick out the left and right moving parts respectively.
+
+Considering the mode expansion, in lightcone coordinates,
+\begin{align}
+    T_{++} = \alpha' \sum_{n \in \Z}^{} L_N e^{-i n \sigma^{+}} = 0 && T_{--} = \alpha' \sum_{n \in \Z}^{} \widetilde{L}_n e^{-i n \sigma^{-}} = 0
+.\end{align}
+This holds for all $\sigma$ and $\tau$ if $L_n = \widetilde{L}_n = 0$. One then finds that
+\begin{align}
+    L_n = \frac{1}{2} \sum_{m \in \Z}^{}  \alpha_{n - m} \cdot \alpha_{m} && \widetilde{L}_n = \frac{1}{2} \sum_{m \in \Z}^{} \widetilde{\alpha}_{n - m} \widetilde{\alpha}_m
+,\end{align}
+where one has defined $\alpha_0^{\mu} = \widetilde{\alpha}^{\mu}_0 = \sqrt{\frac{\alpha'}{2}} p^{\mu}$.
+
+Therefore, the Virasoro constraints are
+\begin{align}
+    \fbox{$\displaystyle L_n = \widetilde{L}_n = 0, \quad \forall n \in \Z$}
+.\end{align}
+
+These constraints are telling us that we have to pick a subset of the solution set for which the parameters obey these constraints.
+
+Notice that for $n = 0$,
+\begin{align}
+    L_0 = \frac{\alpha'}{4} p_\mu p^{\mu} + \sum_{m > 0}^{} \alpha_m \cdot \alpha_{-m} && \widetilde{L}_0 = \frac{\alpha'}{4} p_\mu p^{\mu} + \sum_{m > 0}^{} \widetilde{\alpha}_m \cdot \alpha_{-m}
+.\end{align}
+
+Recall that $X_L + X_R = X \sim  X^{\mu} + P^{\mu} \tau + \cdots$ and that $P_\alpha^{\mu} = T \partial_\alpha X^{\mu}$, where the total momentum on the string is
+\begin{align}
+    P^{\mu} = \int_0^{2\pi} P_{0}^{\mu} \dd{\sigma}
+,\end{align}
+which is exactly equal to $p^{\mu}$ in the string expansion.
+
+We can then identify $p_\mu p^{\mu} = - M^2$ to be the mass shell condition of the string. Namely, we see
+\begin{align}
+    M^2 = \frac{4}{\alpha'} \sum_{n > 0}^{}  \alpha_n \cdot \alpha_{-n} = \frac{4}{\alpha'} \sum_{n > 0}^{} \widetilde{\alpha_n} \cdot \widetilde{\alpha}_{-n}
+.\end{align}
+
+When we quantize the string, we will see that these oscillator coordinates become harmonic oscillator creation and annihilation operators. Then these combinations will become number operators for the excitations of the string. Thus we arrive at the mass of the string in terms of its internal degrees of freedom. Excitations of the oscillator degrees of freedom of the string create heavier particles.
+
+The second noteworthy thing here is that the left and right moving excitations implied by this equation is called \emph{level matching}. Namely, the total occupation number of the left and right moving particles must match. 
+
+Both of these are consequences of Virasoro. We can now think about quantizing the string seriously.
+
+\subsection{Quantization}
+
+Quantizing the string looks promising as it is a two dimensional scalar field theory however there are complications. In particular, we need to impose constraints. There is also the question of residual gauge invariance.
+
+We have two possible routes. 
+\begin{itemize}
+    \item Starting from the conformal gauge action, we can quantize it first and then impose the constraints and fix the gauge in the quantum theory. This is similar to Gupta-Bluer for QED. This gives rise to ghosts (states with negative norm) which are difficult to deal with. However when one imposes the constraints and gauge in this theory the ghosts decouple from physical states and one can define a valid Hilbert space. This uses Faddeev-Popov gauge fixing in the path integral formalism.
+    \item If one imposes the gauge fixing and constraints in the classical theory first, we would expect that this gives a sensible quantum theory upon quantization. Generically, this approach is costly as symmetries like Lorentz invariance are not generally preservable when fixing a gauge. This breaking is facetious as the breaking is a result of a choice and we must recover a Lorentz invariant theory. However in the mean time, it depends on the choice of gauge orbit and thus is not manifestly Lorentz invariant.
+\end{itemize}
+
+We have to get the same quantum theory from both routes if it is consistent. Such symmetries can generically also be broken when attempting to transfer to the quantum theory by the appearance of \emph{anomalies}.
+
+\subsection{Covariant Quantization}
+
+We proceed with the first method. We start with the conformal gauge action
+\begin{align}
+    S_\text{conformal} = -\frac{T}{2} \int_\Sigma \dd{^2 \sigma} \eta^{\alpha \beta} \partial_\alpha X \cdot \partial_\beta X
+,\end{align}
+interpreting $X^{\mu}\left( \sigma, \tau \right) $ as massless scalar fields. We identify the conjugate momenta
+\begin{align}
+    \Pi_\mu \left( \sigma, \tau \right) = \pdv{\mathcal{L}}{\dot{X}^{\mu}} = T \dot{X}_\mu
+.\end{align}
+
+Quantization proceeds by promoting $X^{\mu} \to \hat{X}^{\mu}$ and $\Pi_\mu \to \hat{\Pi}_\mu$ and imposing the equal time commutation relation
+\begin{align}
+    \left[ \hat{X}^{\mu}\left( \sigma, \tau \right) , \hat{\Pi}_\nu \left( \sigma' , \tau \right) \right] = i \delta^{\mu}_\nu \delta\left( \sigma - \sigma' \right)
+.\end{align}
+
+In terms of the mode expansion, we then want to promote $x^{\mu}, p_\mu, \alpha^{\mu}_n$ and $\widetilde{\alpha}^{\mu}_n$ to operators identically. We then see that the reality constraint gives
+\begin{align}
+    \hat{\alpha}_n^{\mu} = \left( \hat{\alpha}^{\mu}_{-n} \right)^{\dag} && \hat{\widetilde{\alpha}}_n^{\mu} = \left( \hat{\widetilde{\alpha}}^{\mu}_{-n} \right)^{\dag}
+.\end{align}
+
+We find that in particular that
+\begin{align}
+    \left[ \hat{x}^{\mu}, \hat{p}_\nu \right] = i \delta^{\mu}_\nu
+,\end{align}
+and for the oscillator operators,
+\begin{align}
+    \left[ \hat{\alpha}^{\mu}_n, \hat{\alpha}^{\nu}_m \right] = \left[ \widetilde{\hat{\alpha}}_n, \widetilde{\hat{\alpha}}^{\nu}_m \right] = n \eta^{\mu \nu} \delta_{m + n, 0}
+.\end{align}
+
+To make this more conventional we can define
+\begin{align}
+    \hat{a}^{\mu}_n = \frac{\hat{\alpha}^{\mu}_n}{\sqrt{n}} && \left( \hat{a}^{\mu}_n \right)^{\dag} = \frac{\hat{\alpha}^{\mu}_{-n}}{\sqrt{n} }
+,\end{align}
+which are the conventional harmonic oscillator operators with $\left[ \hat{a}_n^{\mu}, \left( {\hat{a}^{\nu}_m} \right) ^{\dag} \right]  = \delta_{n,m} \eta^{\mu \nu}$.
+
+Therefore, we can as before, define a Fock space vacuum $\ket{0}$ such that $\hat{a}_{n}^{\mu} \ket{0} = 0$ and thus excited states by
+\begin{align}
+    \prod_{i=1}^{n} \left( \left( {\hat{a}_{n_{i}}^{\mu_{i}}} \right) ^{\dag} \right)^{n_{i}} \ket{0}
+.\end{align}
+
+
+Notice that $\left[ \hat{a}_n^{0}, \left( {\hat{a}_m^{0}} \right) ^{\dag}  \right] = -\delta_{nm}$ gives
+\begin{align}
+    \bra{0} a_1^{0} {a_1^{0}}^{\dag} \ket{0} = -1
+,\end{align}
+which is a problematic state of negative norm that we need to address.
+
+
+
+
+
+

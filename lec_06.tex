@@ -1,0 +1,112 @@
+\lecture{6}{04/02/2025}{Continuing String Quantization}
+
+Recall that $\hat{x}^{\mu}$ and $\hat{p}^{\mu}$ denote the string center of motion and our oscillator operators give a tower of simple harmonic oscillators.
+
+Observe that a generic string ground state takes the form $\ket{0, p^{\mu}}$ defined by $\hat{P}^{\mu} \ket{0, p} = p^{\mu} \ket{0, p}$ and still $\hat{a}^{\mu}_n \ket{0,p}= 0$, with excited states as before. Recall that we still have negative norm states from the time-like oscillator creating ghosts with $\left[ \hat{a}^{0}_n, \left( {\hat{a}^{0}_m} \right)^{\dag}  \right] = - \delta_{n,m}$ giving
+\begin{align}
+    \bra{0, p'} \hat{a}^{0}_1 \left( {\hat{a}^{0}_1} \right)^{\dag} \ket{0, p} = - \delta^{\left( D-1 \right) } \left( p - p' \right) 
+.\end{align}
+
+\subsection{Light-cone quantization}
+
+We proceed with the light-cone quantization of the string. Taking the conformal gauge action
+\begin{align}
+    S_\text{conformal} = - \frac{T}{2} \int_\Sigma \dd{^2 \sigma} \eta^{\alpha \beta} \partial_\alpha X \cdot \partial_\beta X
+.\end{align}
+
+Recall that this has the residual gauge transformations of
+\begin{align}
+    \sigma \to \widetilde{\sigma}\left( \sigma, \tau \right) && \tau \to \widetilde{\tau}\left( \sigma, \tau \right)  && \eta_{\alpha \beta} \to \widetilde{\eta}_{\alpha \beta} = \Omega^2 \left( \sigma, \tau \right) \eta_{\alpha \beta}
+.\end{align}
+
+In worldsheet lightcone coordinates $\sigma^{\pm} = \tau \pm \sigma$ which have metric components $\eta_{+-} = \eta_{-+} = -\frac{1}{2}$ and $\eta_{++} = \eta_{--} = 0$, one has
+\begin{align}
+    \dd{s}^2 &= \eta_{\alpha \beta} \dd{\sigma}^{\alpha} \dd{\sigma}^{\beta} \\ 
+    &= -\dd{\tau}^2 + \dd{\sigma}^2 \\
+    &= -\dd{\sigma}^{+} \dd{\sigma}^{-} 
+.\end{align}
+
+Under $\sigma^{+} \to \widetilde{\sigma}^{+}\left( \sigma^{+} \right) $ and $\sigma^{-} \to \widetilde{\sigma}^{-} \left( \sigma \right) $, it is clear the metric will transform as
+\begin{align}
+    \eta \to \widetilde{\eta} = \dv{\widetilde{\sigma}^{+}}{\sigma^{+}} \dv{\widetilde{\sigma}^{-}}{\sigma^{-}} \eta
+.\end{align}
+
+This can be absorbed by a Weyl transformation. This explains what the residual gauge symmetry is: namely, to independently redefine the two light cone coordinates describing the left and right movers. This is a small (measure zero) fraction of our previous gauge symmetry and is preserved by the  conformal gauge condition.
+
+We can use this residual gauge symmetry to eliminate one of the spacetime coordinates, say $X^{0}\left( \sigma, \tau \right) = X^{0}_L \left( \sigma^{+} \right) + X_R^{0}\left( \sigma^{+} \right) $. Namely, we can set
+\begin{align}
+    \widetilde{\sigma}^{+} = \frac{2}{R} X^{0}\left( \sigma^{+} \right)  \text{~and~} \widetilde{\sigma}^{-} = \frac{2}{R} X^{0}_R \left( \sigma^{-} \right) 
+.\end{align}
+
+Then we see that $X^{0} = X^{0}_L + X^{0}_R = \frac{R}{2} \left( \widetilde{\sigma}^{+} + \widetilde{\sigma}^{-} \right) = R \widetilde{\tau}$.
+
+This condition is exactly what we called the \emph{static gauge condition} before. However this is not the most convenient gauge to take for quantization.
+
+
+\begin{definition}
+    We define \emph{spacetime lightcone coordinates} to be
+    \begin{align}
+        X^{\pm} \equiv \sqrt{\frac{1}{2}}  \left( X^{0} \pm X^{1} \right) 
+    ,\end{align}
+    and $X^{i}$ for $i = 2,\cdots D-1$. Namely, $X^{i} \in \R^{D-2}$ lives in the transverse directions to $X^{\pm}$.
+\end{definition}
+
+The spacetime metric then has components $\eta^{\left( D \right) }_{+-} = \eta^{\left( D \right) }_{-+} = - 1$, $\eta^{\left( D \right) }_{\pm \pm} = 0$ and $\eta_{ij} = \delta_{ij}$, namely, in this basis,
+\begin{align}
+    \eta^{D} = \mqty( & -1 &  & & \\ -1 & & & & \\ & & 1 & & \\ & & & \ddots & \\ & & & & 1)
+.\end{align}
+
+Then we have an inner product given by
+\begin{align}
+    X_\mu Y^{\mu} = \eta_{\mu \nu}^{\left( D \right) } X^{\mu} Y^{\mu} = - X^{+} Y^{-} - X^{-} Y^{+} + \vec{X} \cdot \vec{Y}
+,\end{align}
+where $\vec{X} \cdot \vec{Y} = \delta_{ij} X^{i} Y^{i}$.
+
+We can then define the \emph{lightcone gauge condition}
+\begin{align}
+    X^{+}\left( \sigma, \tau \right) = x^{+} + \alpha' p^{+} \tau
+.\end{align}
+
+In this gauge, (and with lightcone coordinates on the worldsheet as well) the Virasoro constraints take the form
+\begin{align}
+    T_{++} = \eta_{\mu \nu} \partial_+ X^{\mu} \partial_+ X^{\nu} = -2 \partial_+ X^{+} \partial_+ X^{-} + \partial_+ \vec{X} \cdot \partial_+ \vec{X}
+,\end{align}
+where recall that $\partial_+$ is a worldsheet lightcone index and $X^{+}$ is a spacetime lightcone index.
+
+The lightcone gauge condition implies that
+\begin{align}
+    \partial_+ X^{+} = \frac{1}{2} \alpha' p^{+}
+.\end{align}
+
+Hence $T_{++} = T_{--} = 0$ implies 
+\begin{align}\label{eq:v_constraints}
+    \partial_+ X^{-} = \frac{1}{\alpha' p^{+}} \partial_+ \vec{X} \cdot \partial_+ \vec{X} && \partial_- X^{-} = \frac{1}{\alpha' p^{+}} \partial_- \vec{X} \cdot \partial_- \vec{X}
+.\end{align}
+
+We can use these constraints to determine $X^{-}$ as well. Observe that as $X^{-} \left( \sigma, \tau \right) = X^{-}_L \left( \sigma^{+} \right) + X_R^{-}\left( \sigma^{-} \right) $ which have mode expansion
+\begin{align}
+    X^{-}_L \left( \sigma^{+} \right) &= \frac{1}{2} x^{-} + \frac{1}{2}\alpha' p^{-} \sigma^{+} + i \sqrt{\frac{\alpha'}{2}} \sum_{n=0}^{} \frac{1}{n} \widetilde{\alpha}^{-}_n e^{-i n \sigma^{+}}  \\ 
+    X^{-}_R \left( \sigma^{-} \right) &= \frac{1}{2} x^{-} + \frac{1}{2}\alpha' p^{-} \sigma^{-} + i \sqrt{\frac{\alpha'}{2}} \sum_{n=0}^{} \frac{1}{n} \alpha^{-}_n e^{-i n \sigma^{-}} 
+.\end{align}
+
+We can then solve for $\alpha_n^{-}$ in terms of the other oscillator variables. Plugging this into \cref{eq:v_constraints}, we see
+\begin{align}
+    \alpha^{-}_n &= \sqrt{\frac{1}{2\alpha'}}  \frac{1}{p^{+}} \sum_{m \in \Z}^{} \vec{\alpha}_{n-m} \cdot \vec{\alpha}_m \\
+    \widetilde{\alpha}_n^{-} &= \sqrt{\frac{1}{2\alpha'}} \frac{1}{p^{+}} \sum_{m \in \Z}^{} \widetilde{\alpha}_{n-m} \cdot \widetilde{\alpha}_{m} 
+,\end{align}
+where $\alpha^{-}_0  = \widetilde{\alpha}_0^{-} = \sqrt{\frac{\alpha'}{2}}  p^{-}$.
+
+For $n = 0$, we see
+\begin{align}
+    M^2 &= - p_\mu p^{\mu} = 2p^{+} p^{-} - \left| \vec{p_T} \right|^2  \\
+    &= \frac{4}{\alpha'} \sum_{n > 0}^{} \vec{\alpha}_{-n} \cdot \vec{\alpha}_{n} \\
+    &= \frac{4}{\alpha'} \sum_{n > 0}^{} \vec{\widetilde{\alpha}}_{-n} \cdot \vec{\widetilde{\alpha}}_n 
+.\end{align}
+
+This is the mass-shell condition in lightcone gauge.
+
+The only difference to before is that we have eliminated the oscillators in the lightcone directions. They are eliminated by the gauge constraints and imposing the Virasoro constraints. These constraints tell us that only the transverse oscillators of the string contribute.
+
+This is analogous to the fixing of the gauge in QED in Gupta-Bleuer, removing the unphysical polarizations of the photon. The light cone components of the oscillators can be thought of as giving unphysical polarisations of the string.
+
+

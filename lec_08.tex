@@ -1,0 +1,99 @@
+\lecture{8}{08/02/2025}{String spectrums}
+
+The choice of $a = 1$ gives our vacuum state/string ground state $M^2 = -\frac{1}{\alpha'}$. This is a \emph{tachyon}. This is a singlet but does not lead to a sensible representation of the Poincare algebra.
+
+In scalar field theory, for $\phi \left( X \right) $ with $\mathcal{L} = -\frac{1}{2} \partial_\mu \phi \partial^{\mu} \phi - V\left( \phi \right) $
+can have a tachyon if $M^2_\text{eff} \equiv V'' \left( \phi \right)  \mid|_{\phi = 0} < 0$. This indicates an unstable vacuum and is usually an indication we are expanding around the wrong point (as this point has negative curvature). Usually there is a local/global minima elsewhere that this tachyon can be considered to \emph{condense} at. This is the case in superstring theory, however no one knows if this is the case in bosonic string theory here. Yet.
+
+We move then to studying the first excited level, $\hat{\alpha}_{-1}^{i} \ket{0, p}$ with $M^2 = 0$ which is a vector of $SO \left( D-2 \right) $ and thus corresponds to a $U \left( 1 \right) $ gauge field, $A_\mu \left( x \right) $ in $\R^{1, D - 1}$ with $\mu = 0, 1 \cdots, D - 1$. This has gauge invariance
+\begin{align}
+    A_\mu \to A_\mu + \partial_\mu \chi
+,\end{align}
+with gauge invariance object $F_{\mu \nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$, and Lagrangian $\mathcal{L} = -\frac{1}{4e^2} F_{\mu \nu} F^{\mu \nu}$.
+
+Recall that in 4D, one can impose static gauge in which $A_0 = 0$, which ten requires we impose the constraint $\grad \cdot \vec{A} = 0$, leaving us with two degrees of freedom corresponding to the 2 physical polarizations of the photon. This transforms under the little group  $SO \left( D - 2 \right) $.
+
+Thus by exact analogy, we have that $A_\mu \left( X \right) $ contains $D - 2$ tranverse photons.
+
+Further observe that for the second level with $M^2 = \frac{1}{\alpha'}$ we have
+\begin{align}
+    \frac{1}{2} \left( D - 2 \right) \left( D - 1 \right)  + \left( D - 2 \right) = \frac{1}{2} \left( D - 2 \right) \left( D + 1 \right) = \dim \left( \text{Sym. Traceless rep. of } SO \left( D - 1 \right)  \right) 
+.\end{align}
+
+\subsection{Closed string spectrum}
+
+ For the closed string, one has
+ \begin{align}
+     M^2 = \frac{4}{\alpha'} \left( N - a \right) = \frac{4}{\alpha'} \left( \widetilde{N} - a \right) 
+ .\end{align}
+
+ \begin{table}[h]
+     \centering
+     \caption{}
+     \label{tab:css}
+     \begin{tabular}{ccc}
+      $\ket{\psi}$& $M^2 \alpha'$  & Count \\ 
+      \midrule
+      $\ket{\psi}$ & $-4a$ & 1 \\
+      $\hat{\alpha}^{i}_{-1} \hat{\widetilde{\alpha}}_{-1}^{j} \ket{0, p}$ & $4 \left( 1 - a \right) $ & $\left(  D - 2 \right)^2$ \\
+     \end{tabular}
+ \end{table}
+
+ Identically Lorentz invariance requires $a = 1$ such that the first level is massless.
+
+ The resulting spectrum is one with a closed string tachyonic ground state $M^2 = -\frac{4}{\alpha'}$.
+
+ We also have a first excited level with $M^2 = 0$ which is a massless particle transforming in a representation
+ \begin{align}
+     V \otimes V = S + A + I
+,.\end{align}
+where $S$, $A$ and $I$ correspond to the symmetric traceless, anti symmetric traceless and the singlet representation. One can check that these have dimensions $\frac{1}{2} D \left( D - 3 \right) $, $\frac{1}{2} \left( D - 2 \right) \left( D - 3 \right) $ and $1$ which sum to $\left( D - 2 \right)^2$.
+
+The traceless symmetric representation $S$ corresponds to the \emph{graviton} which is a spin $2$ particle created by a spacetime field $G_{\mu \nu} \left( X \right) = G_{\nu \mu}\left( X \right) $ where $\mu, \nu = 0,1,\cdots , D - 1$. This is a metric tensor subject to gauge transformations (spacetime diffeomorphisms). 
+
+Our freedom to change gauge is $X^{\mu} \to X^{\mu} - \xi^{\mu}$ which produces a corresponding gauge transformation of the metric,
+\begin{align}
+    \delta G_{\mu \nu} \nabla_\mu \xi_\nu + \nabla_\nu \xi_\mu
+,\end{align}
+assuming $\nabla$ is torsion free.
+
+The number of propagating degrees of freedom (i.e. the number of physical states in our particle multiplet) is equal to the number of independent components in the field minus twice the number of gauge transformations. This twice comes from the fact that every gauge fixing provides a constraint that needs to be additionally satisfied.
+
+Therefore, thinking of the spacetime metric field as a field (thought of as fluctuating around flat spacetime), we seek to check the number of propagating degrees of freedom of $G_{\mu \nu}$.
+
+The number of independent components is $\frac{1}{2} D \left(  D + 1 \right) $ as these are those above or on the leading diagonal. Then the number of independent gauge transformations is $D$. Thus we have that the number of propagating degrees of freedom is
+\begin{align}
+    \frac{1}{2} D \left( D + 1 \right) - 2D = \frac{1}{2} D \left( D - 3 \right) 
+.\end{align}
+
+In $D = 4$, this is $2$ polarizations as one might expect. This also equals the dimension of the symmetric traceless representation of $SO \left( D- 2 \right) $.
+
+The remaining states can be created by $B_{\mu \nu} \left( X \right) = - B_{\nu \mu}\left( X \right) $ which is an antisymmetric tensor field and a scalar field $\Phi \left( X \right) $ called a \emph{dilaton}.
+
+So far we have only checked degeneracies of states. We also have to construct all the generators of the Lorentz group, i.e. the Lorentz algebra. One can do this using the Noether charges. One can show that the algebra closes after quantization. However, closure of $SO \left( 1, D - 1 \right) $ only occurs in $D = 26$ as we will see when we do covariant quantization.
+
+Thus in summary for the bosonic string:
+\begin{itemize}
+    \item Lorentz invariant only in $D = 26$
+    \item It has a tachyon and thus an unstable vacuum
+    \item It has a massless gauge field (open) or a massless graviton (closed string)
+\end{itemize}
+
+Briefly, we mention that the superstring, rather the NS-R superstring, has action
+\begin{align}
+    S = -\frac{T}{2} \int \dd{^2\ sigma} \eta^{\alpha \beta} \partial_\alpha X^{\mu} \cdot \partial_\beta X))\mu + i \overline{\psi}^{\mu} \rho^{\alpha} \partial_\alpha \psi_{\mu}
+,\end{align}
+where $\rho$ are 2D $\gamma$ matrices. This is a supersymmetric theory with super-Poincare invariance and no tachyon. This has critical dimension $D = 10$.
+
+% CFT Polchinski Ch 2
+% Big Yellow book Ch 5
+
+Further, recall that the conformal gauge action
+\begin{align}
+    S_\text{conformal} = -\frac{T}{2} \int_{\Sigma} \dd{^2 \sigma} \eta^{\alhpa \beta} \partial_\alpha X   \cdot  \partial_\beta X
+.\end{align}
+
+Recall this has a residual gauge symmetric that rescales the metric. This is called a \emph{conformal transformation}. In string theory we think about this as a gauge symmetry, however thinking of this as a 2D field theory, one thinks of this as a global symmetry. One can always return and gauge this symmetry at the end as we will do.
+
+
+

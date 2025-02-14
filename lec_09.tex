@@ -1,0 +1,159 @@
+\lecture{9}{14/02/2025}{Conformal Field Theory}
+
+We are going to study two dimensional field theories with global conformal symmetry. The best example of which, is a single free massless scalar field in $2d$, namely,
+\begin{align}
+    S = \frac{1}{4\pi} \int \dd{^2 \sigma} \eta^{\alpha \beta} \partial_\alpha \partial_\beta X
+.\end{align}
+
+We will work in 2d Euclidean space with $\tau \in \R \to \tau = i \rho \in i \R$ where $\rho$ is called Euclidean time. This removes the minus sign in the metric and leaves us with a positive signature $\R^{1,1} \to \R^2$. The analogue of the lightcone coordinates that we defined before are holomorphic and anti-holomorphic functions
+\begin{align}
+    z = \sigma + i \rho && \overline{z} = \sigma - i \rho
+.\end{align}
+
+We will find it useful to think about this as the complex plane. We also define
+\begin{align}
+    \partial \equiv \partial_z = \partial_z = \frac{1}{2} \left( \partial_\sigma + \partial_\rho \right) && \overline{\partial} \equiv \partial_{\overline{z}} = \frac{1}{2} \left( \partial_\sigma -i \partial_\rho \right) 
+.\end{align}
+
+Notice that $\partial z = \overline{\partial} \overline{z} = 1$ and $\partial \overline{z} = \overline{\partial} z = 0$.
+
+The flat metric on $\Sigma = \R^2$, written as $\dd{s}^2 = \dd{z} \dd{\overline{z}} = \dd{\sigma}^2 + \dd{\rho}^2$ which is exactly the analytic continuation of our previous metric with $\tau = i \rho$. Then we see
+\begin{align}
+    \eta_{\overline{z} z} = \eta_{z\overline{z}} = \frac{1}{2} && \eta_{z z} \eta_{\overline{z} \overline{z}} = 0
+.\end{align}
+
+We also define an integration measure $\int \dd{z} \dd{\overline{z}} = 2 \int \dd{\sigma} \dd{\rho}$.
+
+In string theory, we saw conformal transformations that rescaled the worldsheet metric. In the lightcone coordinates, only the off diagonal components of the metric were non-zero and thus to preserve the metric, one could always reparameterize to negate the conformal one.
+
+\subsection{Euclidean conformal transformations}
+
+Consider Euclidean conformal transformations of the form $z \to \widetilde{z} = f\left( z \right) $ where $f$ is a holomorphic function. We then have
+\begin{align}
+    \overline{z} \to \widetilde{\overline{z}} = \overline{f}\left( \overline{z} \right) 
+.\end{align}
+
+This is a single complex function (i.e. two real functions). Under this transformation, the metric goes $\eta \to \widetilde{\eta} = \Omega^2 \eta$ where
+\begin{align}
+    \Omega^2 = \dv{f}{z} \dv{\overline{f}}{\overline{z}} = \left| \dv{f}{z} \right|^2
+.\end{align}
+
+The simplest transformations possible are spacetime translations of the form
+\begin{align}
+    \widetilde{z} = f\left( z \right) = z + C
+,\end{align}
+for $c \in \C$. 
+
+Next we see rotations at linear order with complex numbers of modulus 1 such that
+\begin{align}
+    \widetilde{z} = f\left( z \right)  = e^{i \theta}z
+,\end{align}
+$\Theta \in \left[ 0,2\pi \right] $.
+
+Taking a real linear term corresponds to a dilation
+\begin{align}
+    \widetilde{z} = f\left( z \right) = \lambda z
+,\end{align}
+where $\lambda \in \R$.
+
+\begin{definition}
+    A \emph{primary field} $\phi \left( z, \overline{z} \right) $ of conformal weight $\left( h,\overline{h} \right) $ is an object that transforms as
+    \begin{align}
+        \phi \to \left( \dv{f}{z} \right)^{-h} \left( \dv{\overline{f}}{\overline{z}} \right)^{-\overline{h}} \phi
+    ,\end{align}
+    with $\left( h,\overline{h} \right) $ integers and
+    \begin{align}
+        h = \frac{1}{2} \left( \Delta + s \right)  && \overline{h} = \frac{1}{2} \left( \Delta - s \right) 
+    ,\end{align}
+    where $\Delta$ is the \emph{scaling dimension} of the operator and $s$ the \emph{spin}.
+\end{definition}
+
+For $f\left( z \right) = \lambda e^{i \theta} z$, according to $\lambda^{-\Delta} e^{-is \Theta} \phi$, we find that
+\begin{align}
+    \phi \to \lambda^{\Delta} e^{-i s \Theta} \phi
+.\end{align}
+Thus $\Delta$ corresponds to the weight of the field under a dilation and under a rotation, its spin $s$ determines how it rotates.
+
+\subsection{Classical CFT}
+
+Consider a transformation of the spacetime coordinates, $\sigma^{1} = \sigma, \sigma^2 = \rho$, such that $\sigma^{\alpha} \to \sigma^{\alpha} + \epsilon^{\alpha } \left( \sigma, \rho \right)$.
+
+Translational invariance implies that
+\begin{align}
+    \delta S = \int \dd{^2 \sigma} J^{\alpha \beta} \partial_\alpha \epsilon_\beta
+,\end{align}
+for some $J_{\alpha \beta}$.
+
+This vanishes for constant $\epsilon^{\alpha}$. Integrating by parts, we see
+\begin{align}
+    \delta S = -\int \dd{^2 \sigma} \left( \partial_\alpha J^{\alpha \beta} \right) \epsilon_\beta
+.\end{align}
+
+This should vanish for an arbitrary $\epsilon_\beta$, and this can only occur for
+\begin{align}
+    \partial_\alpha J^{\alpha \beta} = 0
+.\end{align}
+
+This is one form of Noether's theorem.
+
+As usual, we identify the Noether current for spacetime translations as the stress-energy tensor
+\begin{align}
+    \mathcal{T}^{\alpha \beta} = 2 \pi J_{\alpha \beta}
+.\end{align}
+
+A trick to computing $\mathcal{T}_{\alpha \beta}$ is to go to a curved worldsheet $\delta_{\alpha \beta} \to g_{\alpha \beta}$, which gives
+\begin{align}
+    \dd{^2\sigma} \to \sqrt{g} \dd{^2 \sigma}
+,\end{align}
+and $g \equiv \det g$.
+
+Then our translation corresponds to a 2D diffeomorphism provided the metric transforms as 
+\begin{align}
+    g_{\alpha \beta} \to g_{\alpha \beta} + \delta g_{\alpha \beta}
+,\end{align}
+where $\delta g_{\alpha \b eta} = \nabla_{\alpha} \epsilon_\beta + \nabla_{\beta} \epsilon_\alpha$.
+
+Diffeomorphism invariance then gives us
+\begin{align}
+    \delta S_\text{total} = int \dd{^2 \sigma} \sqrt{g}  J^{\alpha \beta} \partial_\alpha \epsilon_\beta + \int \dd{^2\sigma} \fdv{S}{g_{\alpha \beta}} \delta g_{\alpha \beta} = 0
+.\end{align}
+
+Using our definition of the worldsheet energy momentum tensor, we see
+\begin{align}
+    \int \dd{^2 \sigma} \left( \frac{\sqrt{g}}{2\pi} T^{\alpha \beta} + 2 \fdv{S}{g_{\alpha \beta}}  \right) \partial_\alpha \epsilon_\beta = 0 
+.\end{align}
+
+Thus,
+\begin{align}
+    T^{\alpha \beta} = -\frac{4\pi}{\sqrt{g} } \fdv{S}{g_{\alpha\beta}}
+,\end{align}
+which is very similar to what we took in the context of string theory. This is a nice general formula and encodes the fact that any spacetime transformation, once we include a background metric in its variation, must become a diffeomorphism.
+
+\subsection{Scale invariance}
+
+Consider $\sigma^{\alpha} \to \lambda \sigma^{\alpha}$ and thus $g_{\alpha \beta \to \lambdasr g_{\alpha \beta}}$ to turn this into a diffeomorphism. Infinitesimally, with $\lambda = e^{\epsilon}$ with $\epsilon \ll 1$,
+\begin{align}
+    \delta g_{\alpha \beta} = 2 \epsilon g_{\alpha \beta}
+.\end{align}
+
+Thus we see
+\begin{align}
+    \delta S = \int \dd{^2 \sigma} \fdv{S}{g_{\alpha \beta}} \delta g_{\alpha \beta} = -\frac{1}{2\pi} \int \dd{^2 \sigma} \sqrt{g}  \epsilon \tensor{T}{^{\alpha}_{\beta}} = 0
+,\end{align}
+implies that $\tensor{T}{^{\alpha}_{\alpha}} = 0$, namely that the stress energy tensor is traceless in any (classical) conformal theory.
+
+Recall that in $z = \sigma^{1} + i \sigma^2$ and $\overline{z} = \sigma^{1} = i \sigma^2$ coordinates, this condition becomes
+\begin{align}
+    T_{z \overline{z}} = 0
+.\end{align}
+
+We have the conservation equation $\partial_\alpha T^{\alpha \beta} = 0$ also becomes
+\begin{align}
+    \overline{\partial} T_{zz} = \partial T_{\overline{z}\overline{z}} = 0
+.\end{align}
+This implies $T_{z z} = T\left( z \right)  $ is a holomorphic function and $T_{\overline{z} \overline{z}} = \overline{T}\left( \overline{z} \right)$ is an anti-holomorphic function.
+
+
+
+
+

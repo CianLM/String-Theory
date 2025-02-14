@@ -1,0 +1,144 @@
+\lecture{4}{30/01/2025}{Virasoro Constraints}
+
+Recall that the conformal gauge action
+\begin{align}
+    S_\text{conformal} = -\frac{T}{2} \int_\Sigma \dd{^2\sigma} \eta^{\alpha \beta} \partial_\alpha X \cdot  \partial_\beta X
+,\end{align}
+requires the Virasoro constraint which can be stated as $\mathcal{T}_{\alpha \beta} = 0$ to be imposed. This action has equation of motion $\partial_\alpha \partial^{\alpha} X^{\mu} = 0$.
+
+For open strings, we need to consider the boundary conditions at $\sigma = 0, \pi$.
+
+Consider $X^{\mu} \to X^{\mu} + \delta X^{\mu}$ with $\delta X^{\mu} \left( \sigma, \tau_i \right) = \delta X^{\mu} \left( \sigma, \tau_f \right) = 0$ such that the variation vanishes at the boundaries. We then have
+\begin{align}
+    \delta S_\text{conformal} = -T \int_{\tau_i}^{\tau_f} \dd{\tau} \int_0^{\pi} \dd{\sigma} \eta^{\alpha \beta} \partial_\alpha X \cdot \partial_\beta \left( \delta X \right) 
+,\end{align}
+which can be integrated by parts to give
+\begin{align}
+    \delta S_\text{conformal} = T \int_{\tau_i}^{\tau_f} \dd{\tau} \int_0^{\pi} \dd{\sigma} \left( \eta^{\alpha \beta} \partial_\alpha \partial_\beta X \right) \cdot \delta X - T \int_{\tau_i}^{\tau_f} \left( X' \cdot \delta X \bigg|_{\sigma = \pi} - X' \cdot \delta X \bigg|_{\sigma = 0} \right) 
+.\end{align}
+
+For an arbitrary variation $\delta X$, $\delta S_\text{conformal} = 0$ vanishing requires the bulk piece to vanish,
+\begin{align}
+    \partial_\alpha \partial^{\alpha} X^{\mu} = 0
+,\end{align}
+but also the boundary terms must cumulatively vanish such that
+\begin{align}
+    X' \cdot \delta X \bigg|_{\sigma = 0, \pi} = 0
+.\end{align}
+
+This is satisfied by two different boundary conditions for $X^{\mu} \left( \sigma, \tau \right) $.
+\begin{itemize}
+    \item \emph{Neumann} boundary conditions set $\pdv{X^{\mu}}{\sigma} = 0$ at $\sigma = 0, \pi$.
+    \item \emph{Dirichlet} boundary conditions set $X^{\mu} \bigg|_{\sigma = 0, \pi} = C^{\mu}$ for constant $C^{\mu}$. This implies that $\delta X^{\mu} = 0$. This physically means that the string endpoint does not move in the $X^{\mu}$ direction. It is fixed.
+\end{itemize}
+
+Suppose we choose Dirichlet boundary conditions for $\mu = p+1, \cdots, D-1$ and Neumann for $\mu = 0, \cdots, p$. This is the statement that the $D-p$-dimensional hyperplane fixes the string's boundaries. It is only able to evolve in the transverse directions.
+
+% edit comments
+
+The conformal gauge action
+\begin{align}
+    S_\text{conformal} = -\frac{T}{2} \int_\Sigma \dd{^2 \sigma} \eta^{\alpha \beta} \partial_\alpha X \cdot \partial_\beta X
+,\end{align}
+has residual gauge invariance $\sigma^{\alpha} \to \widetilde{\sigma}^{\alpha}\left( \sigma, \tau \right) $ and $\eta_{\alpha \beta} \to \widetilde{\eta}_{\alpha \beta} = \Omega \left( \sigma \right) \eta_{\alpha \beta}$. Namely, some diffeomorphisms can be undone by Weyl transformations and thus remain in this action. 
+
+We can fix this residual gauge invariance by choosing \emph{static gauge} such that
+\begin{align}
+    X^{0}\left( \sigma,\tau \right) = R \tau
+.\end{align}
+
+% comments
+
+We set
+\begin{align}
+    X^{\mu}\left( \sigma, \tau \right) = \left( t \left( \sigma, \tau \right) , \vec{x}\left( \sigma, \tau \right)  \right) 
+,\end{align}
+with $\vec{x} \in \R^{D-1}$.
+
+The Virasoro constraints $\dot{X} \cdot X' = 0$ and $\frac{1}{2} \left( \dot{X}^2 + X'^2 \right) = 0$ becomes
+\begin{align}
+    \dot{\vec{x}} \cdot \vec{x}' = 0, && \left| \dot{\vec{x}} \right|^2 + \left| \vec{x}' \right|^2 = R^2
+,\end{align}
+where
+\begin{align}
+    \dot{\vec{x}} = \pdv{\vec{x}}{\tau}, && \vec{x}' = \pdv{\vec{x}}{\sigma}
+.\end{align}
+
+Noether currents of spacetime translations here $X^{\mu} \to X^{\mu} + C^{\mu}$ give charges $P^{\mu}_\alpha T \partial_\alpha X^{\mu}$.
+
+% comments
+
+The energy density of the string is given by
+\begin{align}
+    \epsilon \left( \sigma, \tau \right) \equiv P^{\mu = 0}_{\sigma = 0} = T \dot{X}^{0} = TR
+,\end{align}
+where the last equality holds in the static gauge.
+
+The momentum density is given by
+\begin{align}
+    \rho_i \left( \sigma, \tau \right) = P^{\mu = i}_{\sigma = 0} = \dot{\vec{x}}\left( \sigma , \tau \right) 
+.\end{align}
+
+The first Virasoro constraint can thus be phrased as $\dot{\vec{x}} \cdot \vec{x}' = 0 \iff \vec{\rho} \cdot \vec{x}' = 0$ tells us that no momentum is carried along the string in the transverse direction.
+
+% comments 
+We consider a simple solution. At $t = \tau = 0$, consider
+\begin{align}
+    x \left( \sigma, 0 \right) = R \cos \sigma,  && y\left( \sigma,0 \right)  = R \sin \sigma
+,\end{align}
+and $\dot{x}\left( \sigma, 0 \right) = \dot{y}\left( \sigma, 0 \right) = 0$.
+% comments
+The string can't rotate.
+
+Consider the time evolution in static gauge with $t = R \tau$ and thus
+\begin{align}
+    x \left( \sigma, \tau \right) = A \left( \tau \right) \cos \sigma, && y \left( \sigma, \tau \right) A \left( \tau \right) \sin \sigma
+.\end{align}
+
+Plugging this into the string equation of motion we see
+\begin{align}
+    \partial_\alpha \partial^{\alpha} x = 0 \implies \ddot{A}\left( \tau \right) = -A \left( \tau \right)  \implies A \left( \tau \right) = R_0 \cos \left( \tau \right) 
+,\end{align}
+where $A\left( 0 \right) = R_0$ and $\dot{A}\left( 0 \right) = 0$. This works identically for $y$. The first Virasoro constraint $\vec{x}\cdot \vec{x}' = 0$ is satisfied immediately as our motion is purely radial. Similarly, the second $\left| \dot{\vec{x}} \right|^2 + \left| \vec{x}' \right|^2 = R^2$ provides $R = R_0$.
+
+The total energy of the string is then given by
+\begin{align}
+    E = \int_0^{2\pi} \epsilon \left( \sigma, \tau \right)  \dd{\sigma} = 2\pi T R = 2 \pi R_0 T
+,\end{align}
+where we use $\sigma \in \left[ 0,2\pi \right] $ as it is closed.
+
+Thus the energy of the string is the length of the string times the tension. This confirms that $T$ has units of energy per unit length and is therefore a tension.
+
+
+For the open string with Neumann boundary conditions $X'^{\mu} \bigg|_{\sigma = 0, \pi} = 0$. One can interpret this as the fact that the flow of energy momentum along the string vanishes, $P_{\sigma}^{\mu} \bigg|_{\sigma = 0, \pi}$. There is no flux of energy momentum out of the ends of the string.
+
+Looking at the second Virasoro constraint at the endpoints only we see that
+\begin{align}
+    \left( \left| \dot{\vec{x}} \right|^2 + \left| \vec{x}' \right|^2  \right) \bigg|_{\sigma = 0, \pi}  = R^2 \implies \left( \left| \pdv{\vec{x}}{\tau} \right|^2 + 0 \right) \bigg|_{\sigma = 0, \pi}   = R^2
+,\end{align}
+where $t = R \tau$, gives us
+\begin{align}
+     \left| \pdv{\vec{x}}{t} \right|^2 \bigg|_{\sigma = 0, \pi}   = 1
+.\end{align}
+
+Therefore string endpoints move at the speed of light.
+
+\subsection{General solutions}
+
+We introduce \emph{lightcone coordinates} given by
+\begin{align}
+    \sigma^{\pm} = \tau \pm \sigma
+,\end{align}
+which have derivatives
+\begin{align}
+    \partial_\pm = \pdv{\sigma^{\pm}} = \frac{1}{2} \left( \pdv{\tau} \pm \pdv{\sigma} \right) 
+.\end{align}
+
+Then,
+\begin{align}
+    \partial_\alpha \partial^{\alpha} X^{\mu} = 0 \implies \partial_+ \partial_- X^{\mu}\left( \sigma+, \sigma^{-} \right)  = 0
+.\end{align}
+
+We impose $X^{\mu}\left( \sigma^{+}, \sigma^{-} \right) = X^{\mu}\left( \sigma^{-} \right) + X^{\mu} \left( \sigma^{+} \right)$.
+
+
